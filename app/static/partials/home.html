@@ -60,13 +60,17 @@
 
   <div id="series-library">
     <div class="container">
-      <h2>Your Manga Library</h2>
-      <form class="pure-form series-search">
-        <input type="text" ng-model="seriesLibrarySearch.name" class="pure-input" placeHolder="Search">
-      </form>
+      <div class="clearfix">
+        <h2>Your Manga Library</h2>
+
+        <form class="pure-form series-search">
+          <input type="text" ng-model="seriesLibrarySearch.name" class="pure-input" placeHolder="Search">
+        </form>
+      </div>
+
       <div class="pure-g">
-        <div ng-repeat="s in series | filter:seriesLibrarySearch" class="pure-u-1-5">
-          <div class="series">
+        <div ng-repeat="s in series | filter:seriesLibrarySearch" class="pure-u-1-5 series">
+          <div>
             <button class="pure-button">
               <div class="title">{{ s.name }}</div>
               <img ng-src="/cdn{{ s.directory }}/cover_art.jpg">

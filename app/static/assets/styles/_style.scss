@@ -272,6 +272,7 @@ body {
 
   h2 {
     display: inline-block;
+    float: left;
   }
 
   .series-search {
@@ -280,7 +281,7 @@ body {
 
     margin-top: 14px;
 
-    transition: 0.3s;
+    transition: border-color 0.3s;
 
     input {
       height: 35px;
@@ -299,10 +300,31 @@ body {
   }
 
   .series {
-    padding-left: 10px;
-    padding-right: 10px;
+    &.ng-enter,
+    &.ng-leave {
+      position: relative;
+      transition: 0.5s;
+    }
 
-    padding-bottom: 20px;
+    &.ng-leave.ng-leave-active,
+    &.ng-enter {
+      opacity: 0;
+      transform: scale3d(0.1, 0.1, 1.0);
+      width: 0;
+    }
+
+    &.ng-enter.ng-enter-active,
+    &.ng-leave {
+      opacity: 1;
+      transform: scale3d(1.0, 1.0, 1.0);
+      width: 20%;
+    }
+
+    > div {
+      padding-left: 10px;
+      padding-right: 10px;
+      padding-bottom: 20px;
+    }
 
     button {
       padding-left: 2px;
@@ -329,6 +351,26 @@ body {
       width: 100%;
       border-radius: 3px;
     }
+  }
+
+  .animate-enter,
+  .animate-leave { 
+      transition: 0.3s;
+      position: relative;
+  } 
+
+  .animate-enter.animate-enter-active,
+  .animate-leave {
+      opacity: 1;
+      // top: 0;
+      // height: 30px;
+  }
+
+  .animate-leave.animate-leave-active,
+  .animate-enter {
+      opacity: 0;
+      // top: -50px;
+      // height: 0px;
   }
 }
 
