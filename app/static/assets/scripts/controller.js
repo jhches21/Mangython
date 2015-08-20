@@ -100,7 +100,7 @@ homeControllers.controller('HomePageCtrl', ['$scope', '$http', '$timeout', '$san
           }).error(function(data, status, headers, config) {
 
           });
-        }, 500);
+        }, 410);
       }
     };
 

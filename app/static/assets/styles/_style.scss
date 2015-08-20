@@ -12,6 +12,9 @@ body {
   margin: auto;
   width: 1080px;
 
+  margin-bottom: 1.5em;
+  margin-top: 1.5em;
+
   @media (max-width: 1120px) {
     margin-left: 20px;
     margin-right: 20px;
@@ -25,7 +28,7 @@ body {
   color: #dcdcdc;
 
   .container {
-    // margin-bottom: 30px;
+    margin-top: 0;
   }
 
   .pure-menu-list {
@@ -148,7 +151,7 @@ body {
 #search-results {
   overflow: hidden;
   max-height: 999px;
-  transition: 0.5s;
+  transition: max-height 0.5s;
 
   margin-left: -10px;
   margin-right: -10px;
@@ -205,22 +208,20 @@ body {
 }
 
 #series-info {
-  margin-top: 1.5em;
   background-color: #181818;
 
   table-layout: fixed;
   overflow: hidden;
 
   max-height: 999px;
-  transition: 0.5s;
+  margin-top: 0;
+  margin-bottom: 0;
+  transition: 0.4s;
 
   &.ng-hide {
+    margin-top: -.75em;
+    margin-bottom: -.75em;
     max-height: 0;
-  }
-
-  .container {
-    padding-top: 1.5em;
-    padding-bottom: 1.5em;
   }
 
   .image {
@@ -271,21 +272,14 @@ body {
     margin-right: -10px;
   }
 
-  h2 {
-    display: inline-block;
-    float: left;
-  }
-
   .series-search {
     display: inline-block;
     float:right;
 
-    margin-top: 14px;
-
     transition: border-color 0.3s;
 
     input {
-      height: 35px;
+      height: 32px;
       color: black;
 
       transition: 0.3s;
@@ -311,7 +305,7 @@ body {
     &.ng-enter {
       opacity: 0;
       transform: scale3d(0.1, 0.1, 1.0);
-      width: 0;
+      width: 1%;
     }
 
     &.ng-enter.ng-enter-active,
@@ -352,26 +346,6 @@ body {
       width: 100%;
       border-radius: 3px;
     }
-  }
-
-  .animate-enter,
-  .animate-leave { 
-      transition: 0.3s;
-      position: relative;
-  } 
-
-  .animate-enter.animate-enter-active,
-  .animate-leave {
-      opacity: 1;
-      // top: 0;
-      // height: 30px;
-  }
-
-  .animate-leave.animate-leave-active,
-  .animate-enter {
-      opacity: 0;
-      // top: -50px;
-      // height: 0px;
   }
 }
 

@@ -1,34 +1,32 @@
-<header>
-  <div class="pure-menu pure-menu-horizontal">
-    <div class="container clearfix">
-      <!-- <a ui-sref="app" class="pure-menu-heading pure-menu-link">Mangython</a> -->
-      <ul class="pure-menu-list">
-        <li ui-sref-active-eq="pure-menu-active" class="pure-menu-item">
-          <a ui-sref="app" class="pure-menu-link"><i class="fa fa-home"></i> Home</a>
-        </li>
-        <li ui-sref-active="pure-menu-active" class="pure-menu-item">
-          <a ui-sref=".hello" class="pure-menu-link">Hello</a>
-        </li>
-        <li ui-sref-active="pure-menu-active" class="pure-menu-item">
-          <a ui-sref=".test" class="pure-menu-link">Test</a>
-        </li>
-      </ul>
-      <!-- <ul class="pure-menu-list pure-menu-right">
-        <li class="pure-menu-item">
-          <a href="/setting" class="pure-menu-link">Settings</a>
-        </li>
-      </ul> -->
-    </div>
+<div class="pure-menu pure-menu-horizontal">
+  <div class="container clearfix">
+    <!-- <a ui-sref="app" class="pure-menu-heading pure-menu-link">Mangython</a> -->
+    <ul class="pure-menu-list">
+      <li ui-sref-active-eq="pure-menu-active" class="pure-menu-item">
+        <a ui-sref="app" class="pure-menu-link"><i class="fa fa-home"></i> Home</a>
+      </li>
+      <li ui-sref-active="pure-menu-active" class="pure-menu-item">
+        <a ui-sref=".hello" class="pure-menu-link">Hello</a>
+      </li>
+      <li ui-sref-active="pure-menu-active" class="pure-menu-item">
+        <a ui-sref=".test" class="pure-menu-link">Test</a>
+      </li>
+    </ul>
+    <!-- <ul class="pure-menu-list pure-menu-right">
+      <li class="pure-menu-item">
+        <a href="/setting" class="pure-menu-link">Settings</a>
+      </li>
+    </ul> -->
   </div>
+</div>
 
-  <div ng-if="error" class="directory-error">
-    <div class="container">
-      <h1><i class="fa fa-exclamation-triangle"></i> ERROR <i class="fa fa-exclamation-triangle"></i></h1>
-      <p>WARNING: Downloading/saving/viewing manga will not be possible until the error is resolved.</p>
-      <p ng-if="accessible"><code>Cannot access '{{ dir }}', make sure it is accessible.</code></p>
-      <p ng-if="permission"><code>Cannot create new directory at '{{ dir }}' due to permission.</code></p>
-      <p ng-if="notFound"><code>No such file or directory - '{{ dir }}'.</code></p>
-      <p>Please reconfigure the path in config.py if necessary then do hard refresh.</p>
-    </div>
+<div ng-if="error" class="directory-error">
+  <div class="container">
+    <h1><i class="fa fa-exclamation-triangle"></i> ERROR <i class="fa fa-exclamation-triangle"></i></h1>
+    <p>WARNING: Downloading/saving/viewing manga will not be possible until the error is resolved.</p>
+    <p ng-if="accessible"><code>Cannot access '{{ dir }}', make sure it is accessible.</code></p>
+    <p ng-if="permission"><code>Cannot create new directory at '{{ dir }}' due to permission.</code></p>
+    <p ng-if="notFound"><code>No such file or directory - '{{ dir }}'.</code></p>
+    <p>Please reconfigure the path in config.py if necessary then do hard refresh.</p>
   </div>
-</header>
+</div>
