@@ -144,6 +144,7 @@ homeControllers.controller('HomePageCtrl', ['$scope', '$http', '$timeout', '$san
       $http.get('/get-series')
       .success(function(data, status, headers, config) {
         if(data.length > 0) {
+          console.log(data);
           $scope.series = data;
         }
       }).error(function(data, status, headers, config) {
@@ -199,7 +200,7 @@ homeControllers.controller('HomePageCtrl', ['$scope', '$http', '$timeout', '$san
           }).error(function(data, status, headers, config) {
 
           });
-        }, 400);
+        }, 2000);
       }
     };
 
@@ -216,7 +217,8 @@ homeControllers.controller('HomePageCtrl', ['$scope', '$http', '$timeout', '$san
 
       $http.post('/add-series', seriesInfo)
       .success(function(data, status, headers, config) {
-        $scope.getAllSeries();
+        console.log(data);
+        $scope.series.push(data);
       }).error(function(data, status, headers, config) {
 
       });

@@ -69,7 +69,7 @@
       </div>
 
       <div class="pure-g">
-        <div ng-repeat="s in series | filter:seriesLibrarySearch" class="pure-u-1-5 series">
+        <div ng-repeat="s in series | orderBy: 'name' | filter: seriesLibrarySearch" class="pure-u-1-5 series">
           <div>
             <button class="pure-button">
               <div class="title">{{ s.name }}</div>

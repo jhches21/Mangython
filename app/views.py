@@ -117,7 +117,8 @@ def add_series():
 
 @app.route('/get-series')
 def get_series():
-    series = models.Series.query.order_by(models.Series.name).all()
+    # series = models.Series.query.order_by(models.Series.name).all()
+    series = models.Series.query.all()
     ret = []
 
     for s in series:
