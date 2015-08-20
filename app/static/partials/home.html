@@ -1,0 +1,79 @@
+<main>
+  <div class="container">
+    <h1> Welcome to Mangython</h1>
+
+    <button ng-click="showSearch = true; focusInput = true; searchTerm = ''" class="pure-button button-success">
+      <i class="fa fa-plus-circle"></i> Search for a New Manga Series
+    </button>
+
+    <div id="manga-search-wrap">
+      <form ng-show="showSearch" ng-submit="searchManga()" class="pure-form new-series-search">
+        <input focus-me="focusInput" ng-model="searchTerm" type="text" size="30" placeholder="Name of Series" class="pure-input search">
+      </form>
+
+      <button ng-show="showSearch" ng-click="closeAll()" class="pure-button close-search">
+        <i class="fa fa-times"></i>
+      </button>
+    </div>
+
+    <div ng-show="showSearchSpinner" class="search-spinner">
+      <img src="/static/dist/images/spiffygif_30x30.gif">
+      <span>Searching...</span>
+    </div>
+
+    <div ng-show="showSearchResult" id="search-results" class="pure-g">
+      <div ng-repeat="site in searchResult.sites" class="pure-u-1-3">
+        <div class="search-result">
+          <h3>{{ site }}</h3>
+          <div class="search-list-wrap">
+            <div class="search-list">
+              <div class="buttons">
+                <button ng-repeat="info in searchResult[site]" ng-click="getSeriesInfo(info.url, info.title, site)" class="pure-button">
+                  {{ info.title }}
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div ng-show="showSeriesInfo" id="series-info" class="clearfix">
+    <div class="container">
+      <div class="image">
+        <button ng-click="addSeries()" class="pure-button button-success add-series"><i class="fa fa-plus-circle"></i> Add This Series</button>
+        <div ng-if="seriesInfo.img">
+          <img ng-src="{{ seriesInfo.img }}" image-onload="showSeriesInfoOn()" image-onerror="setImageNotFound()">
+        </div>
+      </div>
+      <div class="informations">
+        <h2>{{ seriesInfo.title }} </h2>
+        <p ng-if="seriesInfo.altname"><strong>Alternative Name:</strong> <span ng-bind-html="seriesInfo.altname"></span></p>
+        <p ng-if="seriesInfo.genre"><strong>Genre(s):</strong> <span ng-bind-html="seriesInfo.genre"></span></p>
+        <p ng-if="seriesInfo.authors"><strong>Author(s):</strong> <span ng-bind-html="seriesInfo.authors"></span></p>
+        <p ng-if="seriesInfo.status"><strong>Status:</strong> <span ng-bind-html="seriesInfo.status"></span></p>
+        <p ng-if="seriesInfo.summary"><strong>Summary:</strong> <span ng-bind-html="seriesInfo.summary"></span></p>
+      </div>
+    </div>
+  </div>
+
+  <div id="series-library">
+    <div class="container">
+      <h2>Your Manga Library</h2>
+      <form class="pure-form series-search">
+        <input type="text" ng-model="seriesLibrarySearch.name" class="pure-input" placeHolder="Search">
+      </form>
+      <div class="pure-g">
+        <div ng-repeat="s in series | filter:seriesLibrarySearch" class="pure-u-1-5">
+          <div class="series">
+            <button class="pure-button">
+              <div class="title">{{ s.name }}</div>
+              <img ng-src="/cdn{{ s.directory }}/cover_art.jpg">
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</main>

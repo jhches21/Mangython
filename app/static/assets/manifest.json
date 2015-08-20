@@ -1,0 +1,41 @@
+{
+  "dependencies": {       
+    "main.js": {
+      "files": [
+        "scripts/app.js",
+        "scripts/directive.js",
+        "scripts/controller.js"
+      ],
+      "main": true
+    },
+    "main.css": {
+      "vendor": [
+        "assets/styles/font-awesome-4.4.0/css/font-awesome.min.css"
+      ],
+      "files": [
+        "styles/main.scss"
+      ],
+      "main": true
+    },
+    "pure.css": {
+      "bower": [ "pure" ]
+    },
+    "modernizr.js": {
+      "bower": [ "modernizr" ]
+    },
+    "jquery.js": {
+      "bower": [ "jquery" ]
+    },
+    "angular.js": {
+      "bower": [
+        "angular",
+        "angular-animate",
+        "angular-sanitize",
+        "angular-ui-router"
+      ]
+    }
+  },
+  "config": {
+    "devUrl": "http://127.0.0.1:5000"
+  }
+}

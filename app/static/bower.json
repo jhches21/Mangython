@@ -1,0 +1,50 @@
+{
+  "name": "mangython",
+  "dependencies": {
+    "modernizr": "2.8.2",
+    "pure": "*",
+    "jquery": "~2.1",
+    "angular-latest": "~1.4",
+    "angular-animate": "~1.4",
+    "angular-sanitize": "~1.4",
+    "angular-ui-router": "*"
+  },
+  "overrides": {
+    "modernizr": {
+      "main": "./modernizr.js"
+    },
+    "normalize.css": {
+      "main": "./normalize.css"
+    },
+    "pure": {
+      "main": [
+        "./pure-nr.css"
+      ]
+    },
+    "jquery": {
+      "main": [
+        "./dist/jquery.min.js"
+      ]
+    },
+    "angular": {
+      "main": [
+        "./angular.min.js"
+      ]
+    },
+    "angular-animate": {
+      "main": [
+        "./angular-animate.min.js"
+      ]
+    },
+    "angular-sanitize": {
+      "main": [
+        "./angular-sanitize.min.js"
+      ]
+    },
+    "angular-ui-router": {
+      "main": [
+        "./release/angular-ui-router.min.js"
+      ]
+    }
+  }
+}

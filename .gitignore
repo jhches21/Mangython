@@ -1,3 +1,10 @@
+# Mangython
+bower_components/
+node_modules/
+flask/
+tmp/
+app.db
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
@@ -10,7 +17,6 @@ __pycache__/
 env/
 build/
 develop-eggs/
-dist/
 downloads/
 eggs/
 .eggs/
